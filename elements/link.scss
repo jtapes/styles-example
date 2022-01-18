@@ -1,0 +1,32 @@
+@import '../variables';
+@import '../mixins';
+
+.link {
+  position: relative;
+  display: inline;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  color: $color-blue;
+  background: transparent;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 0;
+    height: map-get($sizes, 4) / 2;
+    background-color: $color-blue;
+    transition: width $animate--time ease-out;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

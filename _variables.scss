@@ -1,0 +1,64 @@
+//$color-base: #3e3e3e;
+$color-base: #464c54;
+
+$color-primary: #ff2e00;
+$color-primary-hover: #d72d00;
+$color-primary-active: #bd2200;
+
+$color-success: #25b782;
+$color-blue: #7da9e0;
+
+$color-fon: #e6e9ed;
+$color-withe: #f4f4f4;
+$color-light: #ccd1d9;
+$color-gray: #8c9299;
+
+$color-element: #545c66;
+$color-element2: #656d78;
+
+$container: (
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+);
+
+// размеры константы map-get($sizes, 4);
+$sizes: (
+  0: 0,
+  4: 4px,
+  8: 8px,
+  12: 12px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  36: 36px,
+  40: 40px,
+  44: 44px,
+  48: 48px,
+  52: 52px,
+  56: 56px,
+  60: 60px,
+  64: 64px,
+  68: 68px,
+  72: 72px,
+  76: 76px,
+  80: 80px
+);
+
+$z-index: (
+  modal: 10,
+  header: 5,
+  menu: 6,
+  font-gray: 4,
+  default: 1,
+  below: -1,
+);
+
+$font: 'Rubik', sans-serif;
+$radius-block: map-get($sizes, 8);
+$radius-element: map-get($sizes, 8);
+$show-block: 0 0 map-get($sizes, 40) rgba($color-element, 0.1);
+$animate--time: 0.2s;

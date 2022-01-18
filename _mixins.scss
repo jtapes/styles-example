@@ -1,0 +1,79 @@
+@import 'variables';
+
+@mixin color($name, $color) {
+  .bg-#{$name}  {
+    background: $color !important; /* stylelint-disable-line declaration-no-important */
+  }
+  .color-#{$name} {
+    color: $color !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+@mixin media($Device) {
+  @if $Device == xl {
+    @media screen and (max-width: map-get($container, xl) - 1px) {
+      @content;
+    }
+  } @else if $Device == lg {
+    @media screen and (max-width: map-get($container, lg) - 1px) {
+      @content;
+    }
+  } @else if $Device == md {
+    @media screen and (max-width: map-get($container, md) - 1px) {
+      @content;
+    }
+  } @else if $Device == sm {
+    @media screen and (max-width: map-get($container, sm) - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin font($size: 18px,  $line-height: 24px, $letter-spacing: 0.1px, $weight: 300, $bottom: false) {
+  margin: 0;
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  user-select: text;
+
+  @if $bottom {
+    margin-bottom: $bottom;
+  }
+}
+
+@mixin h1 {
+  @include font(48px, 54px, 2px, 600, map-get($sizes, 32));
+}
+
+@mixin h2 {
+  @include font(32px, 32px, 1.5px, 500, map-get($sizes, 24));
+}
+
+@mixin h3 {
+  @include font(24px, 28px, 0.5px, 400, map-get($sizes, 16));
+}
+
+@mixin h4 {
+  @include font(20px, 28px, 0.3px, 300, map-get($sizes, 8));
+}
+
+@mixin text {
+  @include font;
+}
+
+@mixin text-sm {
+  @include font(16px, 22px);
+}
+
+@mixin text-default {
+  @include text;
+  @include media(tablet) {
+    @include text-sm;
+  }
+}
+
+@mixin z-index($key) {
+  z-index: map-get($z-index, $key);
+}

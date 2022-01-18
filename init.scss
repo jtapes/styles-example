@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import 'variables';
+@import 'mixins';
+
+@include color('base', $color-base);
+@include color('primary', $color-primary);
+@include color('success', $color-success);
+@include color('blue', $color-blue);
+@include color('fon', $color-fon);
+@include color('withe', $color-withe);
+@include color('light', $color-light);
+@include color('gray', $color-gray);
+@include color('element', $color-element);
+@include color('element2', $color-element2);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.us-t {
+  user-select: text;
+}
+
+body {
+  @include text-default;
+
+  margin: 0 auto;
+  min-width: 280px;
+  color: $color-base;
+
+  /* устанавлиывает цвет активонго элемента  чтобы не выделялось синим на телефонах */
+  -webkit-tap-highlight-color: transparent;
+  background: $color-fon;
+}
+
+// отключаем стилизацию полей для iphone
+input, textarea {
+  appearance: none;
+}
+
+button {
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+input, button {
+  @include text-default;
+}
+
+.h1 {
+  @include h1;
+  @include media(md) {
+    @include h2;
+  }
+}
+
+.h2 {
+  @include h2;
+  @include media(md) {
+    @include h3;
+  }
+}
+
+.h3 {
+  @include h3;
+  @include media(md) {
+    @include h4;
+  }
+}
+
+.text-default {
+  @include text-default;
+}
+
+.text {
+  @include text;
+}
+
+.text-sm {
+  @include text-sm;
+}
+
+svg {
+  height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.icon-16 {
+  width: map-get($sizes, 16);
+  height: map-get($sizes, 16);
+}
+
+.icon-24 {
+  width: map-get($sizes, 24);
+  height: map-get($sizes, 24);
+}
+
+.icon-32 {
+  width: map-get($sizes, 32);
+  height: map-get($sizes, 32);
+}
+
+p {
+  margin-bottom: map-get($sizes, 16);
+  user-select: text;
+}
+
+ul.list {
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: map-get($sizes, 16);
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: map-get($sizes, 8);
+      border-radius: 50%;
+      min-width: map-get($sizes, 8);
+      min-height: map-get($sizes, 8);
+      background: $color-primary;
+    }
+  }
+}
+
+span {
+  user-select: text;
+}
+
+a {
+  text-decoration: none;
+}
+
+.j-container {
+  margin: 0 auto;
+  padding: 0 map-get($sizes, 24);
+  width: 100%;
+  max-width: 1140px !important;
+
+  @include media(md) {
+    padding: 0 map-get($sizes, 16);
+  }
+
+  @include media(md) {
+    max-width: 556px !important;
+  }
+}
+
+.animate-pulse {
+  transform: scale(1);
+  transition: transform ease $animate--time;
+
+  @media (hover){
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: map-get($sizes, 8);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: map-get($sizes, 8);
+  background: rgba($color-blue, 0.5);
+}
+
+::selection {
+  color: $color-fon;
+  background: $color-element;
+}
+
+/* stylelint-disable declaration-no-important */
+/* Нужно перекрывать всевозможные стили, поэтому important */
+@mixin sizes-classes($screen-name: '') {
+  @each $index, $size in $sizes {
+    .m#{$screen-name}-#{$index} {
+      margin: $size !important;
+    }
+    .mx#{$screen-name}-#{$index} {
+      margin-right: $size !important;
+      margin-left: $size !important;
+    }
+    .my#{$screen-name}-#{$index} {
+      margin-top: $size !important;
+      margin-bottom: $size !important;
+    }
+    .ml#{$screen-name}-#{$index} {
+      margin-left: $size !important;
+    }
+    .mr#{$screen-name}-#{$index} {
+      margin-right: $size !important;
+    }
+    .mt#{$screen-name}-#{$index} {
+      margin-top: $size !important;
+    }
+    .mb#{$screen-name}-#{$index} {
+      margin-bottom: $size !important;
+    }
+
+    .p#{$screen-name}-#{$index} {
+      padding: $size !important;
+    }
+    .px#{$screen-name}-#{$index} {
+      padding-right: $size !important;
+      padding-left: $size !important;
+    }
+    .py#{$screen-name}-#{$index} {
+      padding-top: $size !important;
+      padding-bottom: $size !important;
+    }
+    .pl#{$screen-name}-#{$index} {
+      padding-left: $size !important;
+    }
+    .pr#{$screen-name}-#{$index} {
+      padding-right: $size !important;
+    }
+    .pt#{$screen-name}-#{$index} {
+      padding-top: $size !important;
+    }
+    .pb#{$screen-name}-#{$index} {
+      padding-bottom: $size !important;
+    }
+  }
+}
+
+@mixin project-classes($screen-name: '') {
+  .d#{$screen-name}-n {
+    display: none !important;
+  }
+  .d#{$screen-name}-b {
+    display: block !important;
+  }
+  .d#{$screen-name}-f {
+    display: flex !important;
+  }
+  .fw#{$screen-name}-w {
+    flex-wrap: wrap !important;
+  }
+  .fw#{$screen-name}-n {
+    flex-wrap: nowrap !important;
+  }
+  .fd#{$screen-name}-c {
+    flex-direction: column !important;
+  }
+  .fd#{$screen-name}-r {
+    flex-direction: row !important;
+  }
+  .fb#{$screen-name}-100 {
+    flex-basis: 100% !important;
+  }
+  .ai#{$screen-name}-c {
+    align-items: center !important;
+  }
+  .ai#{$screen-name}-fs {
+    align-items: flex-start !important;
+  }
+  .ai#{$screen-name}-fe {
+    align-items: flex-end !important;
+  }
+  .as#{$screen-name}-fs {
+    align-self: flex-start !important;
+  }
+  .as#{$screen-name}-fe {
+    align-self: flex-end !important;
+  }
+  .as#{$screen-name}-c {
+    align-self: center !important;
+  }
+  .jc#{$screen-name}-fe {
+    justify-content: flex-end !important;
+  }
+  .jc#{$screen-name}-fs {
+    justify-content: flex-start !important;
+  }
+  .jc#{$screen-name}-c {
+    justify-content: center !important;
+  }
+  .jc#{$screen-name}-sb {
+    justify-content: space-between !important;
+  }
+
+  .bg#{$screen-name}-n {
+    background: none !important;
+  }
+
+  .br#{$screen-name}-n {
+    border: none !important;
+  }
+
+  .w#{$screen-name}-100 {
+    width: 100% !important;
+  }
+  .h#{$screen-name}-100 {
+    height: 100% !important;
+  }
+
+  .w#{$screen-name}-50 {
+    width: 50% !important;
+  }
+  .h#{$screen-name}-50 {
+    height: 50% !important;
+  }
+
+  .f#{$screen-name}-l {
+    font-weight: 300;
+  }
+  .f#{$screen-name}-r {
+    font-weight: 400;
+  }
+  .f#{$screen-name}-m {
+    font-weight: 600;
+  }
+  .f#{$screen-name}-b {
+    font-weight: 800;
+  }
+}
+
+/* stylelint-enable declaration-no-important */
+
+@include sizes-classes;
+@include project-classes;
+
+@include media(lg) {
+  @include sizes-classes('-lg');
+  @include project-classes('-lg');
+}
+
+@include media(md) {
+  @include sizes-classes('-md');
+  @include project-classes('-md');
+}
+
+@include media(sm) {
+  @include sizes-classes('-sm');
+  @include project-classes('-sm');
+}
+
+@import 'elements/input';
+@import 'elements/button';
+@import 'elements/link';
+@import 'elements/block';

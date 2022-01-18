@@ -1,0 +1,20 @@
+@import '../variables';
+@import '../mixins';
+
+.input {
+  outline: 0;
+  border: 1px solid $color-light;
+  border-radius: $radius-element;
+  padding: 0 map-get($sizes, 28);
+  width: 100%;
+  height: map-get($sizes, 48);
+  background: $color-withe;
+
+  &::placeholder {
+    color: $color-gray;
+  }
+
+  &_errors {
+    border: 1px solid $color-primary;
+  }
+}
