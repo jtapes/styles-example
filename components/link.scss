@@ -1,4 +1,3 @@
-@import '../variables';
 @import '../mixins';
 
 .link {
@@ -17,9 +16,9 @@
     left: 0;
     display: block;
     width: 0;
-    height: map-get($sizes, 4) / 2;
+    height: 2px;
     background-color: $color-blue;
-    transition: width $animate--time ease-out;
+    transition: width $animate-time ease-out;
   }
 
   &:focus {

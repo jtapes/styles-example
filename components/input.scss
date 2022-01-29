@@ -1,13 +1,12 @@
-@import '../variables';
 @import '../mixins';
 
 .input {
   outline: 0;
-  border: 1px solid $color-light;
-  border-radius: $radius-element;
-  padding: 0 map-get($sizes, 28);
+  border: 1px solid $color-gray-light;
+  border-radius: $radius-components;
+  padding: 0 $size-28;
   width: 100%;
-  height: map-get($sizes, 48);
+  height: $size-48;
   background: $color-withe;
 
   &::placeholder {

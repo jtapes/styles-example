@@ -41,6 +41,24 @@
   user-select: none;
 }
 
+::-webkit-scrollbar {
+  width: $size-8;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: $size-8;
+  background: rgba($color-blue, 0.5);
+}
+
+::selection {
+  color: $color-blue;
+  background: $color-element;
+}
+
 
 body {
   @include text-default;
@@ -182,23 +200,6 @@ a {
   }
 }
 
-::-webkit-scrollbar {
-  width: map-get($sizes, 8);
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: map-get($sizes, 8);
-  background: rgba($color-blue, 0.5);
-}
-
-::selection {
-  color: $color-fon;
-  background: $color-element;
-}
 
 @import 'components/input';
 @import 'components/button';
