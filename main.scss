@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import 'mixins';
+
+// сначала подключаем все утилиты, такие как цвета, классы размеров и базовые классы
+
+@include color('base', $color-main);
+@include color('primary', $color-primary);
+@include color('success', $color-success);
+@include color('blue', $color-blue);
+@include color('withe', $color-withe);
+@include color('light', $color-gray-light);
+@include color('gray', $color-gray);
+@include color('element', $color-element);
+@include color('element2', $color-element2);
+
+
+@include sizes-classes;
+@include project-classes;
+
+@include media(lg) {
+  @include sizes-classes('-lg');
+  @include project-classes('-lg');
+}
+
+@include media(md) {
+  @include sizes-classes('-md');
+  @include project-classes('-md');
+}
+
+@include media(sm) {
+  @include sizes-classes('-sm');
+  @include project-classes('-sm');
+}
+
+.us-t {
+  user-select: text;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+body {
+  @include text-default;
+
+  margin: 0 auto;
+  min-width: 280px;
+  max-width: map-get($container, xl);
+
+  color: $color-main;
+
+  /* устанавлиывает цвет активонго элемента, чтобы не выделять акливные элементы на touch устройств */
+  -webkit-tap-highlight-color: transparent;
+  background: $color-withe;
+}
+
+button {
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+input, button {
+  @include text-default;
+}
+
+.h1 {
+  @include h1;
+  @include media(md) {
+    @include h2;
+  }
+}
+
+.h2 {
+  @include h2;
+  @include media(md) {
+    @include h3;
+  }
+}
+
+.h3 {
+  @include h3;
+  @include media(md) {
+    @include h4;
+  }
+}
+
+.text-default {
+  @include text-default;
+}
+
+.text {
+  @include text;
+}
+
+.text-sm {
+  @include text-sm;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  fill: currentColor;
+}
+
+.icon-16 {
+  width: $size-16;
+  height: $size-16;
+}
+
+.icon-24 {
+  width: $size-24;
+  height: $size-24;
+}
+
+.icon-32 {
+  width: $size-32;
+  height: $size-32;
+}
+
+p {
+  margin-bottom: $size-16;
+  user-select: text;
+}
+
+ul.list {
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: $size-16;
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: $size-8;
+      border-radius: 50%;
+      min-width: $size-8;
+      min-height: $size-8;
+      background: $color-primary;
+    }
+  }
+}
+
+span {
+  user-select: text;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.${$custom}-container {
+  margin: 0 auto;
+  padding: 0 map-get($sizes, 24);
+  width: 100%;
+  max-width: 1140px !important;
+
+  @include media(md) {
+    padding: 0 map-get($sizes, 16);
+  }
+
+  @include media(md) {
+    max-width: 556px !important;
+  }
+}
+
+           // какая либо анимация на проекте
+.${$custom}-animate-pulse {
+  transform: scale(1);
+  transition: transform ease $animate-time;
+
+  @media (hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: map-get($sizes, 8);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: map-get($sizes, 8);
+  background: rgba($color-blue, 0.5);
+}
+
+::selection {
+  color: $color-fon;
+  background: $color-element;
+}
+
+@import 'components/input';
+@import 'components/button';
+@import 'components/link';

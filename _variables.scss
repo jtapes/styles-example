@@ -1,5 +1,4 @@
-//$color-base: #3e3e3e;
-$color-base: #464c54;
+$color-main: #464c54;
 
 $color-primary: #ff2e00;
 $color-primary-hover: #d72d00;
@@ -8,9 +7,8 @@ $color-primary-active: #bd2200;
 $color-success: #25b782;
 $color-blue: #7da9e0;
 
-$color-fon: #e6e9ed;
 $color-withe: #f4f4f4;
-$color-light: #ccd1d9;
+$color-gray-light: #ccd1d9;
 $color-gray: #8c9299;
 
 $color-element: #545c66;
@@ -23,30 +21,42 @@ $container: (
   sm: 576px,
 );
 
-// размеры константы map-get($sizes, 4);
 $sizes: (
-  0: 0,
-  4: 4px,
-  8: 8px,
-  12: 12px,
-  16: 16px,
-  20: 20px,
-  24: 24px,
-  28: 28px,
-  32: 32px,
-  36: 36px,
-  40: 40px,
-  44: 44px,
-  48: 48px,
-  52: 52px,
-  56: 56px,
-  60: 60px,
-  64: 64px,
-  68: 68px,
-  72: 72px,
-  76: 76px,
-  80: 80px
+        0: 0,
+        4: 4px,
+        8: 8px,
+        12: 12px,
+        16: 16px,
+        20: 20px,
+        24: 24px,
+        28: 28px,
+        32: 32px,
+        36: 36px,
+        40: 40px,
+        44: 44px,
+        48: 48px,
 );
+
+$size-0: map-get($sizes, 0);
+$size-4: map-get($sizes, 4);
+$size-8: map-get($sizes, 8);
+$size-12: map-get($sizes, 12);
+$size-16: map-get($sizes, 16);
+$size-20: map-get($sizes, 20);
+$size-24: map-get($sizes, 24);
+$size-28: map-get($sizes, 28);
+$size-32: map-get($sizes, 32);
+$size-36: map-get($sizes, 36);
+$size-40: map-get($sizes, 40);
+$size-44: map-get($sizes, 44);
+$size-48: map-get($sizes, 48);
+$size-52: map-get($sizes, 52);
+$size-60: map-get($sizes, 60);
+$size-64: map-get($sizes, 64);
+$size-80: map-get($sizes, 80);
+$size-84: map-get($sizes, 84);
+$size-88: map-get($sizes, 88);
+$size-100: map-get($sizes, 100);
 
 $z-index: (
   modal: 10,
@@ -58,7 +68,8 @@ $z-index: (
 );
 
 $font: 'Rubik', sans-serif;
-$radius-block: map-get($sizes, 8);
-$radius-element: map-get($sizes, 8);
-$show-block: 0 0 map-get($sizes, 40) rgba($color-element, 0.1);
-$animate--time: 0.2s;
+$radius-block: $size-8;
+$radius-components:$size-8;
+$show-block: 0 0 $size-40 rgba($color-element, 0.1);
+$animate-time: 0.2s;
+$custom: 'pr'; // суфикс для кастомных классов

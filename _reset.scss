@@ -124,3 +124,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+// отключаем стилизацию полей для iphone
+input, textarea {
+  appearance: none;
+}

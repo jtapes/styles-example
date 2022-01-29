@@ -1,34 +1,5 @@
 @import 'variables';
 
-@mixin color($name, $color) {
-  .bg-#{$name}  {
-    background: $color !important; /* stylelint-disable-line declaration-no-important */
-  }
-  .color-#{$name} {
-    color: $color !important; /* stylelint-disable-line declaration-no-important */
-  }
-}
-
-@mixin media($Device) {
-  @if $Device == xl {
-    @media screen and (max-width: map-get($container, xl) - 1px) {
-      @content;
-    }
-  } @else if $Device == lg {
-    @media screen and (max-width: map-get($container, lg) - 1px) {
-      @content;
-    }
-  } @else if $Device == md {
-    @media screen and (max-width: map-get($container, md) - 1px) {
-      @content;
-    }
-  } @else if $Device == sm {
-    @media screen and (max-width: map-get($container, sm) - 1px) {
-      @content;
-    }
-  }
-}
-
 @mixin font($size: 18px,  $line-height: 24px, $letter-spacing: 0.1px, $weight: 300, $bottom: false) {
   margin: 0;
   font-family: $font;
@@ -74,6 +45,181 @@
   }
 }
 
+@mixin color($name, $color) {
+  .bg-#{$name}  {
+    background: $color !important; /* stylelint-disable-line declaration-no-important */
+  }
+  .color-#{$name} {
+    color: $color !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+@mixin media($Device) {
+  @if $Device == xl {
+    @media screen and (max-width: map-get($container, xl) - 1px) {
+      @content;
+    }
+  } @else if $Device == lg {
+    @media screen and (max-width: map-get($container, lg) - 1px) {
+      @content;
+    }
+  } @else if $Device == md {
+    @media screen and (max-width: map-get($container, md) - 1px) {
+      @content;
+    }
+  } @else if $Device == sm {
+    @media screen and (max-width: map-get($container, sm) - 1px) {
+      @content;
+    }
+  }
+}
+
+
+
 @mixin z-index($key) {
   z-index: map-get($z-index, $key);
+}
+
+@mixin sizes-classes($screen-name: '') {
+  @each $index, $size in $sizes {
+    .m#{$screen-name}-#{$index} {
+      margin: $size !important;
+    }
+    .mx#{$screen-name}-#{$index} {
+      margin-right: $size !important;
+      margin-left: $size !important;
+    }
+    .my#{$screen-name}-#{$index} {
+      margin-top: $size !important;
+      margin-bottom: $size !important;
+    }
+    .ml#{$screen-name}-#{$index} {
+      margin-left: $size !important;
+    }
+    .mr#{$screen-name}-#{$index} {
+      margin-right: $size !important;
+    }
+    .mt#{$screen-name}-#{$index} {
+      margin-top: $size !important;
+    }
+    .mb#{$screen-name}-#{$index} {
+      margin-bottom: $size !important;
+    }
+
+    .p#{$screen-name}-#{$index} {
+      padding: $size !important;
+    }
+    .px#{$screen-name}-#{$index} {
+      padding-right: $size !important;
+      padding-left: $size !important;
+    }
+    .py#{$screen-name}-#{$index} {
+      padding-top: $size !important;
+      padding-bottom: $size !important;
+    }
+    .pl#{$screen-name}-#{$index} {
+      padding-left: $size !important;
+    }
+    .pr#{$screen-name}-#{$index} {
+      padding-right: $size !important;
+    }
+    .pt#{$screen-name}-#{$index} {
+      padding-top: $size !important;
+    }
+    .pb#{$screen-name}-#{$index} {
+      padding-bottom: $size !important;
+    }
+  }
+}
+
+@mixin project-classes($screen-name: '') {
+  .d#{$screen-name}-n {
+    display: none !important;
+  }
+  .d#{$screen-name}-b {
+    display: block !important;
+  }
+  .d#{$screen-name}-f {
+    display: flex !important;
+  }
+  .fw#{$screen-name}-w {
+    flex-wrap: wrap !important;
+  }
+  .fw#{$screen-name}-n {
+    flex-wrap: nowrap !important;
+  }
+  .fd#{$screen-name}-c {
+    flex-direction: column !important;
+  }
+  .fd#{$screen-name}-r {
+    flex-direction: row !important;
+  }
+  .fb#{$screen-name}-100 {
+    flex-basis: 100% !important;
+  }
+  .ai#{$screen-name}-c {
+    align-items: center !important;
+  }
+  .ai#{$screen-name}-fs {
+    align-items: flex-start !important;
+  }
+  .ai#{$screen-name}-fe {
+    align-items: flex-end !important;
+  }
+  .as#{$screen-name}-fs {
+    align-self: flex-start !important;
+  }
+  .as#{$screen-name}-fe {
+    align-self: flex-end !important;
+  }
+  .as#{$screen-name}-c {
+    align-self: center !important;
+  }
+  .jc#{$screen-name}-fe {
+    justify-content: flex-end !important;
+  }
+  .jc#{$screen-name}-fs {
+    justify-content: flex-start !important;
+  }
+  .jc#{$screen-name}-c {
+    justify-content: center !important;
+  }
+  .jc#{$screen-name}-sb {
+    justify-content: space-between !important;
+  }
+
+  .bg#{$screen-name}-n {
+    background: none !important;
+  }
+
+  .br#{$screen-name}-n {
+    border: none !important;
+  }
+
+  .w#{$screen-name}-100 {
+    width: 100% !important;
+  }
+  .h#{$screen-name}-100 {
+    height: 100% !important;
+  }
+
+  .w#{$screen-name}-50 {
+    width: 50% !important;
+  }
+  .h#{$screen-name}-50 {
+    height: 50% !important;
+  }
+
+  .f#{$screen-name}-l {
+    font-weight: 300;
+  }
+  .f#{$screen-name}-r {
+    font-weight: 400;
+  }
+  .f#{$screen-name}-m {
+    font-weight: 600;
+  }
+  .f#{$screen-name}-b {
+    font-weight: 800;
+  }
 }
