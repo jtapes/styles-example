@@ -1,0 +1,11 @@
+// какая либо анимация на проекте
+.${$custom}-animate-pulse {
+    transform: scale(1);
+    transition: transform ease $animate-time;
+
+@media (hover) {
+&:hover {
+    transform: scale(1.05);
+}
+}
+}

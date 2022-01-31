@@ -13,7 +13,6 @@
 @include color('element', $color-element);
 @include color('element2', $color-element2);
 
-
 @include sizes-classes;
 @include project-classes;
 
@@ -59,14 +58,12 @@
   background: $color-element;
 }
 
-
 body {
   @include text-default;
 
   margin: 0 auto;
   min-width: 280px;
   max-width: map-get($container, xl);
-
   color: $color-main;
 
   /* устанавлиывает цвет активонго элемента, чтобы не выделять акливные элементы на touch устройств */
@@ -121,9 +118,21 @@ input, button {
 }
 
 svg {
-  height: 100%;
   width: 100%;
+  height: 100%;
   fill: currentColor;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+.bold {
+  font-weight: 600;
 }
 
 .icon-16 {
@@ -172,8 +181,7 @@ a {
   text-decoration: none;
 }
 
-
-.${$custom}-container {
+.#{$custom}-container {
   margin: 0 auto;
   padding: 0 map-get($sizes, 24);
   width: 100%;
@@ -187,19 +195,6 @@ a {
     max-width: 556px !important;
   }
 }
-
-           // какая либо анимация на проекте
-.${$custom}-animate-pulse {
-  transform: scale(1);
-  transition: transform ease $animate-time;
-
-  @media (hover) {
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-}
-
 
 @import 'components/input';
 @import 'components/button';
