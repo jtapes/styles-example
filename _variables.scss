@@ -12,7 +12,7 @@ $color-gray-light: #ccd1d9;
 $color-gray: #8c9299;
 
 $color-element: #545c66;
-$color-element2: #656d78;
+$color-element-light: #656d78;
 
 $container: (
   xl: 1200px,
@@ -22,19 +22,19 @@ $container: (
 );
 
 $sizes: (
-        0: 0,
-        4: 4px,
-        8: 8px,
-        12: 12px,
-        16: 16px,
-        20: 20px,
-        24: 24px,
-        28: 28px,
-        32: 32px,
-        36: 36px,
-        40: 40px,
-        44: 44px,
-        48: 48px,
+  0: 0,
+  4: 4px,
+  8: 8px,
+  12: 12px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  36: 36px,
+  40: 40px,
+  44: 44px,
+  48: 48px,
 );
 
 $size-0: map-get($sizes, 0);
@@ -69,7 +69,7 @@ $z-index: (
 
 $font: 'Rubik', sans-serif;
 $radius-block: $size-8;
-$radius-components:$size-8;
+$radius-components: $size-8;
 $show-block: 0 0 $size-40 rgba($color-element, 0.1);
 $animate-time: 0.2s;
 $custom: 'pr'; // суфикс для кастомных классов
