@@ -151,35 +151,37 @@ sup {
   height: $size-32;
 }
 
-p {
-  margin-bottom: $size-16;
-  user-select: text;
-}
-
-ul.list {
-  li {
-    display: flex;
-    align-items: center;
+.main {
+  p {
     margin-bottom: $size-16;
+    user-select: text;
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      margin-right: $size-8;
-      border-radius: 50%;
-      min-width: $size-8;
-      min-height: $size-8;
-      background: $color-primary;
+  span {
+    user-select: text;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: $size-16;
+
+      &::before {
+        content: '';
+        display: block;
+        margin-right: $size-8;
+        border-radius: 50%;
+        min-width: $size-8;
+        min-height: $size-8;
+        background: $color-primary;
+      }
     }
   }
-}
-
-span {
-  user-select: text;
-}
-
-a {
-  text-decoration: none;
 }
 
 .#{$custom}-container {
