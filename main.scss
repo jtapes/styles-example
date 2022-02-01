@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 @import 'mixins';
+@import 'grid';
 
 // сначала подключаем все утилиты, такие как цвета, классы размеров и базовые классы
 
@@ -11,7 +12,7 @@
 @include color('light', $color-gray-light);
 @include color('gray', $color-gray);
 @include color('element', $color-element);
-@include color('element2', $color-element2);
+@include color('element2', $color-element-light);
 
 @include sizes-classes;
 @include project-classes;
@@ -63,7 +64,7 @@ body {
 
   margin: 0 auto;
   min-width: 280px;
-  max-width: map-get($container, xl);
+  max-width: map-get($breakpoints, xl);
   color: $color-main;
 
   /* устанавлиывает цвет активонго элемента, чтобы не выделять акливные элементы на touch устройств */

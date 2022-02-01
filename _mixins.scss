@@ -56,19 +56,19 @@
 
 @mixin media($Device) {
   @if $Device == xl {
-    @media screen and (max-width: map-get($container, xl) - 1px) {
+    @media screen and (max-width: map-get($breakpoints, xl) - 1px) {
       @content;
     }
   } @else if $Device == lg {
-    @media screen and (max-width: map-get($container, lg) - 1px) {
+    @media screen and (max-width: map-get($breakpoints, lg) - 1px) {
       @content;
     }
   } @else if $Device == md {
-    @media screen and (max-width: map-get($container, md) - 1px) {
+    @media screen and (max-width: map-get($breakpoints, md) - 1px) {
       @content;
     }
   } @else if $Device == sm {
-    @media screen and (max-width: map-get($container, sm) - 1px) {
+    @media screen and (max-width: map-get($breakpoints, sm) - 1px) {
       @content;
     }
   }
