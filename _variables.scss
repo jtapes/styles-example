@@ -67,7 +67,8 @@ $z-index: (
 
 $font: 'Rubik', sans-serif;
 $radius-block: $size-8;
-$radius-components: $size-8;
+$radius-element: $size-8;
+$border-element: $size-4;
 $show-block: 0 0 $size-40 rgba($color-element, 0.1);
 $animate-time: 0.2s;
 $custom: 'pr'; // суфикс для кастомных классов
