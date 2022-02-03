@@ -59,9 +59,9 @@ $size-88: 88px;
 $size-100: 100px;
 
 $z-index: (
-  modal: 10,
-  header: 5,
-  menu: 6,
+  modal: 30,
+  header: 20,
+  menu: 10,
   default: 1,
 );
 
@@ -71,4 +71,4 @@ $radius-element: $size-8;
 $border-element: $size-4;
 $show-block: 0 0 $size-40 rgba($color-element, 0.1);
 $animate-time: 0.2s;
-$custom: 'pr'; // суфикс для кастомных классов
+$custom: 'pr'; // префикс для кастомных классов
