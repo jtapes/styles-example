@@ -1,6 +1,6 @@
 @import 'variables';
 
-@mixin font($size: 18px,  $line-height: 24px, $letter-spacing: 0.1px, $weight: 300, $bottom: false) {
+@mixin font($size: 18px,  $line-height: 24px, $letter-spacing: 0.1px, $weight: 400, $bottom: false) {
   margin: 0;
   font-family: $font;
   font-weight: $weight;
@@ -15,19 +15,19 @@
 }
 
 @mixin h1 {
-  @include font(48px, 54px, 2px, 600, map-get($sizes, 32));
+  @include font(48px, 54px, 2px, 600, $size-32);
 }
 
 @mixin h2 {
-  @include font(32px, 32px, 1.5px, 500, map-get($sizes, 24));
+  @include font(32px, 32px, 1.5px, 500, $size-24);
 }
 
 @mixin h3 {
-  @include font(24px, 28px, 0.5px, 400, map-get($sizes, 16));
+  @include font(24px, 28px, 0.5px, 400, $size-16);
 }
 
 @mixin h4 {
-  @include font(20px, 28px, 0.3px, 300, map-get($sizes, 8));
+  @include font(20px, 28px, 0.3px, 400, $size-8);
 }
 
 @mixin text {
