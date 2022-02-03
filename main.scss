@@ -118,12 +118,6 @@ input, button {
   @include text-sm;
 }
 
-svg {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
 sub {
   vertical-align: sub;
 }
@@ -132,8 +126,14 @@ sup {
   vertical-align: super;
 }
 
-.bold {
+.b {
   font-weight: 600;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 .icon-16 {
