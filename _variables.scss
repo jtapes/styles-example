@@ -50,13 +50,13 @@ $size-36: map-get($sizes, 36);
 $size-40: map-get($sizes, 40);
 $size-44: map-get($sizes, 44);
 $size-48: map-get($sizes, 48);
-$size-52: map-get($sizes, 52);
-$size-60: map-get($sizes, 60);
-$size-64: map-get($sizes, 64);
-$size-80: map-get($sizes, 80);
-$size-84: map-get($sizes, 84);
-$size-88: map-get($sizes, 88);
-$size-100: map-get($sizes, 100);
+$size-52: 52px;
+$size-60: 60px;
+$size-64: 64px;
+$size-80: 80px;
+$size-84: 84px;
+$size-88: 88px;
+$size-100: 100px;
 
 $z-index: (
   modal: 10,
